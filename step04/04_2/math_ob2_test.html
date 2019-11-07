@@ -4,39 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>수학 객체</title>
+<title>수학 객체 - 가위바위보</title>
     <script>
-        var num = 2.5234;
+        document.write("<h1>컴퓨터 가위,바위,보 맞추기</h1>");
 
-        var maxNum = Math.max(10, 5, 8, 30);
-        console.log(maxNum);
+        var game = prompt("가위,바위,보 중 선택하세요","");
+        var gameNum;
+        switch (game) {
+            case "가위":
+            gameNum = 1; break;
 
-        var minNum = Math.min(10, 5, 8, 30);
-        console.log(minNum);
+            case "바위":
+            gameNum = 2; break;
 
-        var roundNum = Math.round(num);
-        console.log(roundNum);
+            case "보":
+            gameNum = 3; break;
 
-        var floorNum = Math.floor(num);
-        console.log(floorNum);
+            default: alert("잘못 작성했습니다.");
+            location.reload();
+        }
 
-        var ceilNum = Math.ceil(num);
-        console.log(ceilNum);
+        var com = Math.ceil(Math.random() * 3);
+        console.log(com);
 
-        var rndNum = Math.random();
-        console.log(rndNum);
+        document.write(com + "입니다");
 
-        var piNum = Math.PI;
-        console.log(piNum);
-
-        //
-        var randomNumber = Math.random()*10;
-        console.log(randomNumber);
-        var randomNumber2 = Math.floor(Math.random()*11);
-        console.log(randomNumber2);
-
-        var randomNumber3 = Math.floor(Math.random()*31)+120;
-        console.log(randomNumber3);
+        if(gameNum == com){
+            document.write("잘맞췄습니다");
+        }else {
+            document.write("틀렸습니다");
+        }
     </script>
 </head>
 <body>

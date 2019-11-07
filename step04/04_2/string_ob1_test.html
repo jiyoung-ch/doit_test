@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>문자열 객체</title>
+    <script>
+        var t = "Hello Thank you good luck to you";
+        console.log(t.charAt(16));
+        console.log(t.indexOf("you"));
+        console.log(t.indexOf("you",16));
+        console.log(t.lastIndexOf("you"));
+        console.log(t.lastIndexOf("you",25));
+        console.log(t.match("luck"));
+        console.log(t.search("you"));
+        console.log(t.substr(21,4));
+        console.log(t.substring(6,12));
+        console.log(t.replace("you","me"));
+        console.log(t.toLowerCase());
+        console.log(t.toUpperCase());
+        console.log(t.length);
+
+        var s = t.split("");
+        console.log(s[0]);
+        console.log(s[4]);
+
+        var str = "A";
+        var t = str.charCodeAt(0);
+        console.log(t);
+        console.log( String.fromCharCode(65) );
+    </script>
+</head>
+<body>
+
+</body>
+</html>

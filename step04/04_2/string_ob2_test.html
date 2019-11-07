@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>문자열 객체 -  소문자 대문자로 바꾸기 + 핸드폰 번호 뒷자리만****</title>
+    <script>
+        var userName = prompt("당신의 영문 이름은?","");
+
+        var upperName = userName.toUpperCase();
+        console.log(upperName);
+
+        var userNum = prompt("당신의 연락처는?","");
+        var result = userNum.substring(0, userNum.length - 4) +"****";
+        console.log(result);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
