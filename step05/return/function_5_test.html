@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>retur문</title>
+    <script>
+        var num = 1;
+        function gall(direct){
+            if(direct){
+                if(num === 5) return;
+                num++;
+                console.log(num);
+            }else{
+                if(num === 1) return;
+                num--;
+                console.log(num);
+            }
+            var img = document.getElementById("photo");
+            img.setAttribute("src","images/pic_" + num + ".jpg");
+        }
+
+    </script>
+</head>
+<body>
+    <div id="gallZone">
+        <p><img src="images/pic_1.jpg" id="photo" alt="" srcset=""></p>
+        <p>
+            <button onclick="gall(0)">이전</button>
+            <button onclick="gall(1)">다음</button>
+        </p>
+    </div>
+</body>
+</html>
