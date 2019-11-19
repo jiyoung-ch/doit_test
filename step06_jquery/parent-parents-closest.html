@@ -1,0 +1,80 @@
+<!-- 부모요소(상위요소) 선택하는 방법
+        parent()
+        parents()
+        closest() -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function(){
+            $(".test1_1").parent().css("border","5px solid blue");
+
+            $(".test2").parents().css("border","2px dashed skyblue");
+
+            $(".test3").closest("div").css("border","2px solid red");
+            //$(".test3").parent("div").css("border","2px solid red");
+
+            $(".test1").contents().css("background-color","yellow");
+
+        });
+    </script>
+
+        <!-- $(".test1_1").parent()의 바로 위 부모 div에 css 적용됨 -->
+</head>
+<body>
+        <!-- parent()
+        $("요소선택").parent();
+        선택한 요소를 감싸고 있는 부모요소 선택
+
+        parents()
+        1. $("요소선택").parents();
+        선택한 요소를 기준으로 상위요소 모두 선택
+        2. $("요소선택").parents("요소선택");
+        선택한 요소를 기준으로 상위요중 선택한 요소만 선택
+
+        closest()
+        $("요소선택").closest("요소선택");
+        선택한 요소를 기준으로 가장 가까운 상위 요소만 선택
+
+        ## contents()
+        $("요소선택").contents()
+        선택한 요소를 기준으로 가장 가까운 하위 요소만 선택
+        -->
+        <div>
+            <ul>
+                <li class="test1">
+                    테스트1
+                    <ul>
+                        <li class="test1_1">테스트1-1</li>
+                        <li>테스트1-2</li>
+                        <li>테스트1-3</li>
+                    </ul>
+                </li>
+                <li>테스트1</li>
+                <li>테스트1</li>
+            </ul>
+        </div>
+
+        <div>
+            <p class="test2">테스트2</p>
+        </div>
+        <div>
+            <p class="test3">테스트3</p>
+        </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
