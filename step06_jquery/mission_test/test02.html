@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test02</title>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <!--
+        조건
+        1. 글자크기는 14px에서 시작하여 -버튼을 누르면 1px씩 감소, +버튼을 누르면 1px씩 증가(최소 8px, 최대 20px)
+        2. 100%버튼을 누르면 다시 14px로 변경
+    -->
+    <script>
+    $(function(){
+        var cnt = 14;//처음 폰트사이즈 14px
+
+        //1.글자크기는 14px에서 시작
+        $("#wrap").css({"font-size":"14px"});
+
+        //2.+버튼을 누른다
+        $(".zoomInBtn").on("click",function(){
+            //+버튼을 누르면 1씩 커진다
+            cnt++;
+            console.log(cnt);
+
+            //cnt가 증가하면  //(최대 20px)
+            if(cnt <= 20){
+                //글자크기도 1px씩 증가한다
+                $("#wrap").css({"font-size": + cnt +"px"});
+            }
+        });
+
+        //3.-버튼을 누른다
+        $(".zoomOutBtn").on("click",function(){
+            //-버튼을 누르면 1씩 작아진다
+            cnt--;
+            console.log(cnt);
+
+            //cnt가 감소하면  //(최소 8px)
+            if(cnt >= 8){
+                //글자크기도 1px씩 감소한다
+                $("#wrap").css({"font-size": + cnt +"px"});
+            }
+        });
+
+        //4. 100% 버튼 누르면 폰트 14x로 초기화
+        $(".originBtn").on("click",function(){
+            $("#wrap").css({"font-size":"14px"});
+        });
+    });
+    </script>
+</head>
+<body>
+    <p>글자 확대, 축소 버튼 만들기</p>
+    <p class="zoomBtnZone">
+        <button class="zoomOutBtn">-</button>
+        <button class="originBtn">100%</button>
+        <button class="zoomInBtn">+</button>
+    </p>
+    <p class="fontSize">14px</p>
+    <div id="wrap">
+        fontsize test zoom fontsize test zoom fontsize test zoom fontsize test zoom fontsize test zoom fontsize test zoom
+    </div>
+</body>
+</html>
+
+
