@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>delegate() one()</title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function(){
+            //delegate()
+            $(".btn_wrap").delegate(".btn_1.on","mouseover focus",function(){
+                alert("hello");
+            });
+            $(".btn_1").addClass("on");
+
+            //one()
+            $(document).one("mouseover focus",".btn_2.on",function(){
+                alert("welcome");
+            });
+            $(".btn_2").addClass("on");
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <p class="btn_wrap">
+            <button class="btn_1">버튼1</button>
+        </p>
+        <p>
+            <button class="btn_2">버튼2</button>
+        </p>
+    </div>
+</body>
+</html>
