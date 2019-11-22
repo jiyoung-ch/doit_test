@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>queue()</title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function(){
+            $(".txt1")
+            .animate({"margin-left":"200px"},1000)
+            .animate({"margin-top":"200px"},1000)
+            .queue(function(){
+                $(this).css({background:"red"});
+                $(this).dequeue();//생략하면 queue메서드 이후의 애니메이션은 적용되지 않는다.
+            });
+            $(".txt1")
+            .animate({"margin-left":"0"}, function () {
+                alert('bb');
+                $(".txt1").animate({"margin-top":"0"}, 5000, function () {
+                    alert('cc');
+                });
+            });
+            // .queue(function(){
+            //     alert('bb');
+            //     $(this).dequeue();//생략하면 queue메서드 이후의 애니메이션은 적용되지 않는다.
+            //     // alert('queue');
+            // })
+            // .queue(function(){
+            //     alert('queue');
+            // });
+
+        });
+        // $(function(){
+        //     $(".txt1").animate({"margin-left":"200px"},1000);
+        //     $(".txt1").animate({"margin-top":"200px"},1000);
+
+        //     $(".txt1").queue(function(){
+        //         $(this).css({background:"red"});
+        //         //$(this).dequeue();//생략하면 queue메서드 이후의 애니메이션은 적용되지 않는다.
+        //     });
+
+        //     $(".txt1").animate({"margin-left":"0"});
+        //     $(".txt1").animate({"margin-top":"0"});
+        // });
+    </script>
+    <style>
+        *{margin:0;}
+        .txt1{width:50px; text-align:center; background-color:aqua;}
+    </style>
+</head>
+<body>
+    <p class="txt1">내용1</p>
+</body>
+</html>
+
+
