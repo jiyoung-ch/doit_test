@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>animate() - 지정구간에서 슬라이드 요소 만들기</title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function(){
+            var count = 10;
+            var button = $(".btn_wrap").find("button");
+            console.log(button);
+
+            //Go버튼을 누를때마다
+            $(".goBtn").on("click",function(){
+                if( button.hasClass("goBtn") ){
+                    count++;
+                    console.log(count);
+                    $(".txt1").animate({"margin-left":+ count +"px"},100);
+                }
+            });
+
+            //Back버튼을 누를때마다
+            $(".backBtn").on("click",function(){
+                if( button.hasClass("backBtn") ){
+                    count--;
+                    console.log(count);
+                    $(".txt1").animate({"margin-left":+ count +"px"},100);
+                };
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="btn_wrap">
+        <button class="backBtn">Back</button>
+        <button class="goBtn">Go</button>
+    </div>
+    <div class="wrap">
+        <p class="txt1">내용1</p>
+    </div>
+</body>
+</html>
+
+
